@@ -2,6 +2,22 @@ use std::env;
 use std::fs::{File, OpenOptions};
 use std::io::{BufRead, BufReader, Write};
 
+struct Person {
+    name: String,
+    age: u8,
+    gender: char,
+}
+
+impl Person {
+    fn new(name: String, age: u8, gender: char) -> Person {
+        Person {
+            name,
+            age,
+            gender
+        }
+    }
+}
+
 fn main() {
     // change file to be a user defined path in std input - to be typed in the terminal
     let args: Vec<String> = env::args().collect();
